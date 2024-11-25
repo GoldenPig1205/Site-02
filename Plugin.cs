@@ -9,6 +9,7 @@ using MEC;
 
 using static RealitySL.EventHandlers.PlayerEvents;
 using static RealitySL.EventHandlers.MapEvents;
+using static RealitySL.EventHandlers.ServerEvents;
 
 using static RealitySL.IEnumerators.ServerManagers;
 
@@ -32,6 +33,8 @@ namespace RealitySL
 
             _ball = Timing.RunCoroutine(Ball());
 
+            Exiled.Events.Handlers.Server.WaitingForPlayers += OnWaitingForPlayers;
+
             Exiled.Events.Handlers.Map.PickupAdded += OnPickupAdded;
             Exiled.Events.Handlers.Map.PickupDestroyed += OnPickupDestroyed;
 
@@ -39,11 +42,14 @@ namespace RealitySL
             Exiled.Events.Handlers.Player.Left += OnLeft;
             Exiled.Events.Handlers.Player.ChangingRole += OnChaningRole;
             Exiled.Events.Handlers.Player.TogglingNoClip += OnTogglingNoClip;
+            Exiled.Events.Handlers.Player.Shot += OnShot;
         }
 
         public override void OnDisabled()
         {
             Timing.KillCoroutines(_ball);
+
+            Exiled.Events.Handlers.Server.WaitingForPlayers -= OnWaitingForPlayers;
 
             Exiled.Events.Handlers.Map.PickupAdded -= OnPickupAdded;
             Exiled.Events.Handlers.Map.PickupDestroyed -= OnPickupDestroyed;
@@ -52,6 +58,7 @@ namespace RealitySL
             Exiled.Events.Handlers.Player.Left -= OnLeft;
             Exiled.Events.Handlers.Player.ChangingRole -= OnChaningRole;
             Exiled.Events.Handlers.Player.TogglingNoClip -= OnTogglingNoClip;
+            Exiled.Events.Handlers.Player.Shot -= OnShot;
 
             base.OnDisabled();
             Instance = null;

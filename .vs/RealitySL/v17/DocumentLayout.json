@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "D:\\GoldenPig1205\\Visual Studio 2022\\RealitySL\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}|RealitySL.csproj|d:\\goldenpig1205\\visual studio 2022\\realitysl\\realitysl\\eventhandlers\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}|RealitySL.csproj|solutionrelative:realitysl\\eventhandlers\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}|RealitySL.csproj|d:\\goldenpig1205\\visual studio 2022\\realitysl\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}|RealitySL.csproj|solutionrelative:plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}|RealitySL.csproj|d:\\goldenpig1205\\visual studio 2022\\realitysl\\realitysl\\eventhandlers\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}|RealitySL.csproj|solutionrelative:realitysl\\eventhandlers\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}|RealitySL.csproj|d:\\goldenpig1205\\visual studio 2022\\realitysl\\realitysl\\ienumerators\\servermanagers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}|RealitySL.csproj|solutionrelative:realitysl\\ienumerators\\servermanagers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,24 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 184,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Server.cs",
+              "DocumentMoniker": "D:\\GoldenPig1205\\Visual Studio 2022\\RealitySL\\RealitySL\\EventHandlers\\Server.cs",
+              "RelativeDocumentMoniker": "RealitySL\\EventHandlers\\Server.cs",
+              "ToolTip": "D:\\GoldenPig1205\\Visual Studio 2022\\RealitySL\\RealitySL\\EventHandlers\\Server.cs",
+              "RelativeToolTip": "RealitySL\\EventHandlers\\Server.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwBQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T09:41:32.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServerManagers.cs",
+              "DocumentMoniker": "D:\\GoldenPig1205\\Visual Studio 2022\\RealitySL\\RealitySL\\IEnumerators\\ServerManagers.cs",
+              "RelativeDocumentMoniker": "RealitySL\\IEnumerators\\ServerManagers.cs",
+              "ToolTip": "D:\\GoldenPig1205\\Visual Studio 2022\\RealitySL\\RealitySL\\IEnumerators\\ServerManagers.cs",
+              "RelativeToolTip": "RealitySL\\IEnumerators\\ServerManagers.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvygAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T09:10:54.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\GoldenPig1205\\Visual Studio 2022\\RealitySL\\RealitySL\\EventHandlers\\Player.cs",
+              "RelativeDocumentMoniker": "RealitySL\\EventHandlers\\Player.cs",
+              "ToolTip": "D:\\GoldenPig1205\\Visual Studio 2022\\RealitySL\\RealitySL\\EventHandlers\\Player.cs",
+              "RelativeToolTip": "RealitySL\\EventHandlers\\Player.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowGAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T09:06:51.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Plugin.cs",
               "DocumentMoniker": "D:\\GoldenPig1205\\Visual Studio 2022\\RealitySL\\Plugin.cs",
               "RelativeDocumentMoniker": "Plugin.cs",
               "ToolTip": "D:\\GoldenPig1205\\Visual Studio 2022\\RealitySL\\Plugin.cs",
               "RelativeToolTip": "Plugin.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T12:56:00.161Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         }

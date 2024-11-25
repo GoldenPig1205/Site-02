@@ -5,9 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Exiled.API.Enums;
+using Exiled.API.Features.Doors;
+using Exiled.Events.Commands.Reload;
 using Exiled.Events.EventArgs.Player;
+using Interactables.Interobjects.DoorUtils;
+using InventorySystem.Items.Pickups;
 using MEC;
+using Mirror;
 using RealitySL.Classes;
+using RealitySL.Components;
 using UnityEngine;
 
 using static RealitySL.Variables.ServerManagers;
@@ -79,6 +85,29 @@ namespace RealitySL.EventHandlers
 
                     PlayerStatuses[ev.Player].IsSitDown = true;
                     PlayerStatuses[ev.Player].IsChangingSitDownState = false;
+                }
+            }
+        }
+
+        public static IEnumerator<float> OnShot(ShotEventArgs ev)
+        {
+            if (ev.RaycastHit.transform != null)
+            {
+                if (ev.RaycastHit.transform.TryGetComponentInParent<ItemPickupBase>(out ItemPickupBase itemPickupBase))
+                {
+                    GameObject _ball = ev.RaycastHit.transform.gameObject;
+                    int _count = 100;
+
+                    _ball.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rig);
+
+                    while (_count > 0)
+                    {
+                        rig.AddForce(ev.Player.GameObject.transform.forward + new Vector3(0, 0.003f, 0), ForceMode.Impulse);
+
+                        _count--;
+
+                        yield return Timing.WaitForOneFrame;
+                    }
                 }
             }
         }

@@ -121,6 +121,7 @@
     <Compile Include="RealitySL\Configs\Config.cs" />
     <Compile Include="RealitySL\EventHandlers\Map.cs" />
     <Compile Include="RealitySL\EventHandlers\Player.cs" />
+    <Compile Include="RealitySL\EventHandlers\Server.cs" />
     <Compile Include="RealitySL\IEnumerators\ServerManagers.cs" />
     <Compile Include="RealitySL\Variables\ServerManagers.cs" />
   </ItemGroup>
