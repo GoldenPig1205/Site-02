@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\dependencies\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\dependencies\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\Assembly-CSharp.dll</HintPath>
@@ -43,38 +43,44 @@
     <Reference Include="Assembly-CSharp-Publicized">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\Assembly-CSharp-Publicized.dll</HintPath>
     </Reference>
+    <Reference Include="AudioPlayer">
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\AudioPlayer.dll</HintPath>
+    </Reference>
     <Reference Include="CommandSystem.Core">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\CommandSystem.Core.dll</HintPath>
     </Reference>
     <Reference Include="DiscordInteraction">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\DiscordInteraction.dll</HintPath>
+      <HintPath>..\DiscordInteraction\bin\Debug\DiscordInteraction.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.API">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.CreditTags">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\Exiled.CreditTags.dll</HintPath>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\Exiled.CreditTags.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.CustomItems">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\Exiled.CustomItems.dll</HintPath>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\Exiled.CustomItems.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.CustomRoles">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\Exiled.CustomRoles.dll</HintPath>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\Exiled.CustomRoles.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Events">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\Exiled.Events.dll</HintPath>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\Exiled.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Permissions">
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\Exiled.Permissions.dll</HintPath>
     </Reference>
     <Reference Include="GGUtils">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\GGUtils.dll</HintPath>
+      <HintPath>..\GGUtils\bin\Debug\GGUtils.dll</HintPath>
     </Reference>
     <Reference Include="MapEditorReborn">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\MapEditorReborn.dll</HintPath>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\MapEditorReborn.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\Mirror.dll</HintPath>
     </Reference>
     <Reference Include="MultiBroadcast">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\MultiBroadcast.dll</HintPath>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\MultiBroadcast.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.1.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -83,14 +89,17 @@
     <Reference Include="NorthwoodLib">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\NorthwoodLib.dll</HintPath>
     </Reference>
+    <Reference Include="NVorbis">
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\dependencies\NVorbis.dll</HintPath>
+    </Reference>
     <Reference Include="PluginAPI">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\PluginAPI.dll</HintPath>
     </Reference>
     <Reference Include="SCPSLAudioApi">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\dependencies\SCPSLAudioApi.dll</HintPath>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\dependencies\SCPSLAudioApi.dll</HintPath>
     </Reference>
     <Reference Include="Site02">
-      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\Site02.dll</HintPath>
+      <HintPath>..\Site02\bin\Debug\Site02.dll</HintPath>
     </Reference>
     <Reference Include="SLPlayerRotation">
       <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\dependencies\SLPlayerRotation.dll</HintPath>
