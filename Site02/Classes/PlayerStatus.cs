@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealitySL.Classes
+namespace Site02.Classes
 {
     public class PlayerStatus
     {

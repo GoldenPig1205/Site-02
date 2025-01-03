@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-using static RealitySL.Variables.ServerManagers;
+using static Site02.Variables.ServerManagers;
 
-namespace RealitySL.IEnumerators
+namespace Site02.IEnumerators
 {
     public class ServerManagers
     {

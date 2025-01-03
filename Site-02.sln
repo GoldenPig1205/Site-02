@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealitySL", "RealitySL.csproj", "{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Site-02", "Site-02.csproj", "{ABB5244A-B7A4-4E48-A7BA-C07FB60CC499}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 using Exiled.API.Features;
 using Exiled.API.Features.Doors;
-using RealitySL.Classes;
+using Site02.Classes;
 using UnityEngine;
 
-namespace RealitySL.Variables
+namespace Site02.Variables
 {
     public static class ServerManagers
     {

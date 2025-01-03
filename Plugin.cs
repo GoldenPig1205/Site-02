@@ -7,24 +7,24 @@ using System.Threading.Tasks;
 using Exiled.API.Features;
 using MEC;
 
-using static RealitySL.Variables.ServerManagers;
+using static Site02.Variables.ServerManagers;
 
-using static RealitySL.EventHandlers.PlayerEvents;
-using static RealitySL.EventHandlers.MapEvents;
-using static RealitySL.EventHandlers.ServerEvents;
+using static Site02.EventHandlers.PlayerEvents;
+using static Site02.EventHandlers.MapEvents;
+using static Site02.EventHandlers.ServerEvents;
 
-using static RealitySL.IEnumerators.ServerManagers;
+using static Site02.IEnumerators.ServerManagers;
 
-namespace RealitySL
+namespace Site02
 {
-    public class RealitySL : Plugin<Config>
+    public class Site02 : Plugin<Config>
     {
-        public override string Name => "RealitySL";
+        public override string Name => "Site02";
         public override string Author => "GoldenPig1205";
         public override Version Version => new Version(1, 0, 0);
         public override Version RequiredExiledVersion => new Version(1, 2, 0, 5);
 
-        public static RealitySL Instance;
+        public static Site02 Instance;
 
         public override void OnEnabled()
         {

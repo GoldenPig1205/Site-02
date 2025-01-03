@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Exiled.API.Interfaces;
 
-namespace RealitySL
+namespace Site02
 {
     public class Config : IConfig
     {

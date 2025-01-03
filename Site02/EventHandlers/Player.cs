@@ -12,13 +12,13 @@ using Interactables.Interobjects.DoorUtils;
 using InventorySystem.Items.Pickups;
 using MEC;
 using Mirror;
-using RealitySL.Classes;
-using RealitySL.Components;
+using Site02.Classes;
+using Site02.Components;
 using UnityEngine;
 
-using static RealitySL.Variables.ServerManagers;
+using static Site02.Variables.ServerManagers;
 
-namespace RealitySL.EventHandlers
+namespace Site02.EventHandlers
 {
     public static class PlayerEvents
     {
