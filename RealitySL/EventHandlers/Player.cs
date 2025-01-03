@@ -88,28 +88,5 @@ namespace RealitySL.EventHandlers
                 }
             }
         }
-
-        public static IEnumerator<float> OnShot(ShotEventArgs ev)
-        {
-            if (ev.RaycastHit.transform != null)
-            {
-                if (ev.RaycastHit.transform.TryGetComponentInParent<ItemPickupBase>(out ItemPickupBase itemPickupBase))
-                {
-                    GameObject _ball = ev.RaycastHit.transform.gameObject;
-                    int _count = 100;
-
-                    _ball.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rig);
-
-                    while (_count > 0)
-                    {
-                        rig.AddForce(ev.Player.GameObject.transform.forward + new Vector3(0, 0.003f, 0), ForceMode.Impulse);
-
-                        _count--;
-
-                        yield return Timing.WaitForOneFrame;
-                    }
-                }
-            }
-        }
     }
 }

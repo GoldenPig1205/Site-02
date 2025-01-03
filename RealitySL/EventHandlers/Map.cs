@@ -13,20 +13,5 @@ namespace RealitySL.EventHandlers
 {
     public class MapEvents
     {
-        public static void OnPickupAdded(PickupAddedEventArgs ev)
-        {
-            if (ev.Pickup.Weight >= 0.7f)
-            {
-                ev.Pickup.Transform.gameObject.AddComponent<BallComponent>();
-
-                Balls.Add(ev.Pickup.Transform);
-            }
-        }
-
-        public static void OnPickupDestroyed(PickupDestroyedEventArgs ev)
-        {
-            if (Balls.Contains(ev.Pickup.Transform))
-                Balls.Remove(ev.Pickup.Transform);
-        }
     }
 }

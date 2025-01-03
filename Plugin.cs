@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Exiled.API.Features;
 using MEC;
 
+using static RealitySL.Variables.ServerManagers;
+
 using static RealitySL.EventHandlers.PlayerEvents;
 using static RealitySL.EventHandlers.MapEvents;
 using static RealitySL.EventHandlers.ServerEvents;
@@ -24,41 +26,30 @@ namespace RealitySL
 
         public static RealitySL Instance;
 
-        CoroutineHandle _ball = new CoroutineHandle();
-
         public override void OnEnabled()
         {
             Instance = this;
             base.OnEnabled();
 
-            _ball = Timing.RunCoroutine(Ball());
+            foreach (var _audioClip in AudioClips)
+                AudioClipStorage.LoadClip(GGUtils.Gtool.ConventToAudioPath(_audioClip.Key), _audioClip.Value);
 
             Exiled.Events.Handlers.Server.WaitingForPlayers += OnWaitingForPlayers;
-
-            Exiled.Events.Handlers.Map.PickupAdded += OnPickupAdded;
-            Exiled.Events.Handlers.Map.PickupDestroyed += OnPickupDestroyed;
 
             Exiled.Events.Handlers.Player.Verified += OnVerified;
             Exiled.Events.Handlers.Player.Left += OnLeft;
             Exiled.Events.Handlers.Player.ChangingRole += OnChaningRole;
             Exiled.Events.Handlers.Player.TogglingNoClip += OnTogglingNoClip;
-            Exiled.Events.Handlers.Player.Shot += OnShot;
         }
 
         public override void OnDisabled()
         {
-            Timing.KillCoroutines(_ball);
-
             Exiled.Events.Handlers.Server.WaitingForPlayers -= OnWaitingForPlayers;
-
-            Exiled.Events.Handlers.Map.PickupAdded -= OnPickupAdded;
-            Exiled.Events.Handlers.Map.PickupDestroyed -= OnPickupDestroyed;
 
             Exiled.Events.Handlers.Player.Verified -= OnVerified;
             Exiled.Events.Handlers.Player.Left -= OnLeft;
             Exiled.Events.Handlers.Player.ChangingRole -= OnChaningRole;
             Exiled.Events.Handlers.Player.TogglingNoClip -= OnTogglingNoClip;
-            Exiled.Events.Handlers.Player.Shot -= OnShot;
 
             base.OnDisabled();
             Instance = null;

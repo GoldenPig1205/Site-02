@@ -15,6 +15,10 @@ namespace RealitySL.Variables
     {
         public static Dictionary<Player, PlayerStatus> PlayerStatuses = new Dictionary<Player, PlayerStatus>();
         public static Dictionary<byte, float> DoorHealthes = new Dictionary<byte, float>();
+        public static Dictionary<string, string> AudioClips = new Dictionary<string, string>() 
+        {
+            // {"", ""}
+        };
 
         public static List<Transform> Balls = new List<Transform>();
     }

@@ -43,8 +43,9 @@
     <Reference Include="Assembly-CSharp-Publicized">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\Assembly-CSharp-Publicized.dll</HintPath>
     </Reference>
-    <Reference Include="AudioPlayer">
-      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\AudioPlayer.dll</HintPath>
+    <Reference Include="AudioPlayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\dependencies\AudioPlayer.dll</HintPath>
     </Reference>
     <Reference Include="CommandSystem.Core">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\CommandSystem.Core.dll</HintPath>
