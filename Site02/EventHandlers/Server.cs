@@ -19,6 +19,21 @@ namespace Site02.EventHandlers
     {
         public static void OnWaitingForPlayers()
         {
+            GameObject.Find("StartRound").transform.localScale = Vector3.zero;
+            Room.List.ToList().ForEach(x => x.Color = new Color(0, 0, 0));
+
+            AudioPlayer audioPlayer = AudioPlayer.CreateOrGet($"Global AudioPlayer", onIntialCreation: (p) =>
+            {
+                Speaker speaker = p.AddSpeaker("Main", isSpatial: false, maxDistance: 5000);
+            });
+
+            audioPlayer.AddClip("Main Theme", 0.3f, true);
+        }
+
+        public static void OnRoundStarted()
+        {
+            if (AudioPlayer.TryGet("Global AudioPlayer", out AudioPlayer ap))
+                ap.RemoveAllClips();
         }
     }
 }

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Exiled.API.Enums;
+using Exiled.API.Extensions;
+using Exiled.API.Features;
 using Exiled.API.Features.Doors;
 using Exiled.Events.Commands.Reload;
 using Exiled.Events.EventArgs.Player;
@@ -12,6 +14,7 @@ using Interactables.Interobjects.DoorUtils;
 using InventorySystem.Items.Pickups;
 using MEC;
 using Mirror;
+using PlayerRoles;
 using Site02.Classes;
 using Site02.Components;
 using UnityEngine;
@@ -24,13 +27,32 @@ namespace Site02.EventHandlers
     {
         public static void OnVerified(VerifiedEventArgs ev)
         {
-            if (!ev.Player.IsNPC)
+            if (Round.IsLobby)
             {
-                PlayerStatuses.Add(ev.Player, new PlayerStatus
+                IEnumerator<float> loop()
                 {
-                    IsSitDown = false,
-                    IsChangingSitDownState = false
-                });
+                    while (Round.IsLobby)
+                    {
+                        ev.Player.ShowHint($"\n\n\n\n<align=left><size=20>Site-02 / Record Tag: #1205 ({Round.LobbyWaitingTime})</size></align>", 1.2f);
+
+                        yield return Timing.WaitForSeconds(1);
+                    }
+                }
+
+                Timing.RunCoroutine(loop());
+
+                ev.Player.EnableEffect(EffectType.FogControl, 7);
+            }
+            else
+            {
+                if (!ev.Player.IsNPC)
+                {
+                    PlayerStatuses.Add(ev.Player, new PlayerStatus
+                    {
+                        IsSitDown = false,
+                        IsChangingSitDownState = false
+                    });
+                }
             }
         }
 
@@ -43,6 +65,12 @@ namespace Site02.EventHandlers
             }
         }
 
+        public static void OnSpawned(SpawnedEventArgs ev)
+        {
+            ev.Player.EnableEffect(EffectType.SoundtrackMute);
+            ev.Player.EnableEffect(EffectType.FogControl, 7);
+        }
+
         public static void OnChaningRole(ChangingRoleEventArgs ev)
         {
             PlayerStatuses[ev.Player] = new PlayerStatus();
@@ -52,7 +80,7 @@ namespace Site02.EventHandlers
 
         public static IEnumerator<float> OnTogglingNoClip(TogglingNoClipEventArgs ev)
         {
-            if (!PlayerStatuses[ev.Player].IsChangingSitDownState && !ev.Player.IsJumping && !ev.Player.IsNoclipPermitted)
+            if (!PlayerStatuses[ev.Player].IsChangingSitDownState && !ev.Player.IsJumping && !ev.Player.IsNoclipPermitted && ev.Player.IsHuman)
             {
                 PlayerStatuses[ev.Player].IsChangingSitDownState = true;
 

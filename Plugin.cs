@@ -19,7 +19,7 @@ namespace Site02
 {
     public class Site02 : Plugin<Config>
     {
-        public override string Name => "Site02";
+        public override string Name => "Site-02";
         public override string Author => "GoldenPig1205";
         public override Version Version => new Version(1, 0, 0);
         public override Version RequiredExiledVersion => new Version(1, 2, 0, 5);
@@ -35,9 +35,11 @@ namespace Site02
                 AudioClipStorage.LoadClip(GGUtils.Gtool.ConventToAudioPath(_audioClip.Key), _audioClip.Value);
 
             Exiled.Events.Handlers.Server.WaitingForPlayers += OnWaitingForPlayers;
+            Exiled.Events.Handlers.Server.RoundStarted += OnRoundStarted;
 
             Exiled.Events.Handlers.Player.Verified += OnVerified;
             Exiled.Events.Handlers.Player.Left += OnLeft;
+            Exiled.Events.Handlers.Player.Spawned += OnSpawned;
             Exiled.Events.Handlers.Player.ChangingRole += OnChaningRole;
             Exiled.Events.Handlers.Player.TogglingNoClip += OnTogglingNoClip;
         }
@@ -45,9 +47,11 @@ namespace Site02
         public override void OnDisabled()
         {
             Exiled.Events.Handlers.Server.WaitingForPlayers -= OnWaitingForPlayers;
+            Exiled.Events.Handlers.Server.RoundStarted -= OnRoundStarted;
 
             Exiled.Events.Handlers.Player.Verified -= OnVerified;
             Exiled.Events.Handlers.Player.Left -= OnLeft;
+            Exiled.Events.Handlers.Player.Spawned -= OnSpawned;
             Exiled.Events.Handlers.Player.ChangingRole -= OnChaningRole;
             Exiled.Events.Handlers.Player.TogglingNoClip -= OnTogglingNoClip;
 
