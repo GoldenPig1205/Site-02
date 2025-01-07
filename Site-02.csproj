@@ -34,9 +34,6 @@
     <Reference Include="0Harmony">
       <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\dependencies\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\SCPSL\SCPSL_Data\Managed\Assembly-CSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
@@ -75,7 +72,7 @@
       <HintPath>..\GGUtils\bin\Debug\GGUtils.dll</HintPath>
     </Reference>
     <Reference Include="MapEditorReborn">
-      <HintPath>..\..\..\Users\11010박경현\AppData\Roaming\EXILED\Plugins\MapEditorReborn.dll</HintPath>
+      <HintPath>C:\Users\GoldenPig1205\AppData\Roaming\EXILED\Plugins\MapEditorReborn.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
       <HintPath>..\..\SCPSL\SCPSL_Data\Managed\Mirror.dll</HintPath>
@@ -127,11 +124,14 @@
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site02\Classes\PlayerStatus.cs" />
+    <Compile Include="Site02\Commands\ClientCommands\BasicFeatures\Chat.cs" />
+    <Compile Include="Site02\Commands\ClientCommands\BasicFeatures\Emotion.cs" />
     <Compile Include="Site02\Components\BallComponent.cs" />
     <Compile Include="Site02\Configs\Config.cs" />
     <Compile Include="Site02\EventHandlers\Map.cs" />
     <Compile Include="Site02\EventHandlers\Player.cs" />
     <Compile Include="Site02\EventHandlers\Server.cs" />
+    <Compile Include="Site02\EventHandlers\Warhead.cs" />
     <Compile Include="Site02\IEnumerators\ServerManagers.cs" />
     <Compile Include="Site02\Variables\ServerManagers.cs" />
   </ItemGroup>
