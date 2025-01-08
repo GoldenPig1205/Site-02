@@ -73,11 +73,9 @@ namespace Site02.EventHandlers
             if (ev.Player.IsAlive)
             {
                 ev.Player.EnableEffect(EffectType.FogControl, 2);
-                
-                if (ev.Player.IsScp)
-                {
-                    ev.Player.Health = ev.Player.MaxHealth * 3;
 
+                if (ev.Player.IsScp && ev.Reason == SpawnReason.ItemUsage)
+                {
                     switch (ev.Player.Role.Type)
                     {
                         case RoleTypeId.Scp049:
@@ -158,19 +156,29 @@ namespace Site02.EventHandlers
                 ev.Player.ShowHint($"\n\n<size=20><b>The Site-02 recording and playback device that had been stopped is now working again.</b></size>", 5);
 
                 yield return Timing.WaitForSeconds(6);
-            
-                ev.Player.ShowHint($"\n\n<size=20><b>In this recording, you will be writing to <color={ev.NewRole.GetColor().ToHex()}>{ev.NewRole.GetFullName()}</color>.</b></size>", 5);
+
+                try
+                {
+                    ev.Player.ShowHint($"\n\n<size=20><b>In this recording, you will be writing to <color={ev.NewRole.GetColor().ToHex()}>{ev.NewRole.GetFullName()}</color>.</b></size>", 5);
+                }
+                catch (Exception ex)
+                {
+                    ev.Player.ShowHint($"오류가 발생했습니다. 개발자에게 문의해주세요.\n\n<size=20><b>{ex}</b></size>", 5);
+                }
 
                 yield return Timing.WaitForSeconds(6);
 
                 ev.Player.Role.Set(ev.NewRole, SpawnReason.ItemUsage);
             }
 
-            if (!ev.NewRole.IsScp())
+            if (!ev.NewRole.IsDead())
             {
-                PlayerStatuses[ev.Player] = new PlayerStatus();
+                if (!ev.NewRole.IsScp())
+                {
+                    PlayerStatuses[ev.Player] = new PlayerStatus();
 
-                ev.Player.Scale = new Vector3(1, 1, 1);
+                    ev.Player.Scale = new Vector3(1, 1, 1);
+                }
             }
         }
 
