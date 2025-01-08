@@ -37,7 +37,10 @@ namespace Site02.IEnumerators
                                         JumpScareCooldown.Remove(player);
                                     });
 
-                                    AudioPlayer audioPlayer = AudioPlayer.CreateOrGet($"Player {player.Nickname}", owners: new List<ReferenceHub>() { player.ReferenceHub } ,onIntialCreation: (p) =>
+                                    AudioPlayer audioPlayer = AudioPlayer.CreateOrGet($"Player {player.Nickname}", condition: (hub) =>
+                                    {
+                                        return hub == player.ReferenceHub;
+                                    }, onIntialCreation: (p) =>
                                     {
                                         Speaker speaker = p.AddSpeaker("Main", isSpatial: false, maxDistance: 12050);
                                     });
@@ -51,10 +54,10 @@ namespace Site02.IEnumerators
                                 }
                             }
                         }
-
-                        yield return Timing.WaitForOneFrame;
                     }
                 }
+
+                yield return Timing.WaitForOneFrame;
             }
         }
 
