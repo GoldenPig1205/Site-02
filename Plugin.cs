@@ -22,10 +22,12 @@ namespace Site02
     {
         public override string Name => "Site-02";
         public override string Author => "GoldenPig1205";
-        public override Version Version => new Version(1, 0, 0);
+        public override Version Version => new Version(1, 0, 1);
         public override Version RequiredExiledVersion => new Version(1, 2, 0, 5);
 
         public static Site02 Instance;
+
+        public static CoroutineHandle _inputCooldown;
 
         public override void OnEnabled()
         {
@@ -48,7 +50,10 @@ namespace Site02
             Exiled.Events.Handlers.Player.TogglingNoClip += OnTogglingNoClip;
             Exiled.Events.Handlers.Player.Hurt += OnHurt;
             Exiled.Events.Handlers.Player.ChangedEmotion += OnChangedEmotion;
+
+            _inputCooldown = Timing.RunCoroutine(InputCooldown());
         }
+
         public override void OnDisabled()
         {
             Exiled.Events.Handlers.Server.WaitingForPlayers -= OnWaitingForPlayers;
@@ -64,6 +69,8 @@ namespace Site02
             Exiled.Events.Handlers.Player.TogglingNoClip -= OnTogglingNoClip;
             Exiled.Events.Handlers.Player.Hurt -= OnHurt;
             Exiled.Events.Handlers.Player.ChangedEmotion -= OnChangedEmotion;
+
+            Timing.KillCoroutines(_inputCooldown);
 
             base.OnDisabled();
             Instance = null;
