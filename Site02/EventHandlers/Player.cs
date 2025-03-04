@@ -74,6 +74,13 @@ namespace Site02.EventHandlers
             {
                 ev.Player.EnableEffect(EffectType.FogControl, 2);
 
+                if (ev.Player.IsHuman)
+                {
+                    PlayerStatuses[ev.Player] = new PlayerStatus();
+
+                    ev.Player.Scale = new Vector3(1, 1, 1);
+                }
+
                 if (ev.Player.IsScp && ev.Reason == SpawnReason.ItemUsage)
                 {
                     switch (ev.Player.Role.Type)
@@ -169,16 +176,6 @@ namespace Site02.EventHandlers
                 yield return Timing.WaitForSeconds(6);
 
                 ev.Player.Role.Set(ev.NewRole, SpawnReason.ItemUsage);
-            }
-
-            if (!ev.NewRole.IsDead())
-            {
-                if (!ev.NewRole.IsScp())
-                {
-                    PlayerStatuses[ev.Player] = new PlayerStatus();
-
-                    ev.Player.Scale = new Vector3(1, 1, 1);
-                }
             }
         }
 
